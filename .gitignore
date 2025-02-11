@@ -1,0 +1,41 @@
+# macOS System Files
+.DS_Store
+
+# Xcode User-Specific Files
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+*.mode2v3
+!default.mode1v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
+*.xcscmblueprint
+
+# Build & Derived Data
+DerivedData/
+build/
+Build/
+
+# Swift Package Manager
+.swiftpm/
+SourcePackages/
+Package.resolved
+
+# Supabase
+supabase/.temp
+.supabase/
+
+# Logs & Debugging
+*.log
+*.trace
+*.crash
+*.xccrashpoint
+
+# Simulator Files
+Library/Developer/CoreSimulator/
+
+# Environment & Secrets
+.env
+*.keychain
