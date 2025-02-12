@@ -1,5 +1,5 @@
 //
-//  Task.swift
+//  Milestone.swift
 //  goaltogether-ios
 //
 //  Created by Andrew Koo on 2/11/25.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Task: Identifiable, Codable, Equatable {
+struct Milestone: Identifiable, Codable, Equatable {
     let id: UUID
     var title: String
     var description: String?
