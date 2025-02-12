@@ -9,4 +9,5 @@ import Foundation
 
 protocol DataService {
     func fetchGroups() async throws -> [Group]
+    func fetchMilestones() async throws -> [Milestone]
 }

@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject private var groupListViewModel = GroupListViewModel()
+    
     var body: some View {
         MainTabView()
+            .environmentObject(groupListViewModel)
     }
 }
 

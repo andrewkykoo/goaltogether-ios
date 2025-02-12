@@ -11,4 +11,8 @@ class SupabaseService: DataService {
     func fetchGroups() async throws -> [Group] {
         return []
     }
+    
+    func fetchMilestones() async throws -> [Milestone] {
+        return []
+    }
 }
