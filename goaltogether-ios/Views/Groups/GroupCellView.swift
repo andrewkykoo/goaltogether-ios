@@ -12,7 +12,7 @@ struct GroupCellView: View {
                     .font(.subheadline)
                     .foregroundColor(.secondary)
             }
-            Text("Members: \(group.members.count)")
+            Text("\(group.members.count) members · \(group.goals.count) goals")
                 .font(.subheadline)
                 .foregroundColor(.secondary)
         }
@@ -31,6 +31,21 @@ struct GroupCellView: View {
             Member(username: "Alice"),
             Member(username: "Bob")
         ],
-        goals: []
+        goals: [
+            Goal(
+                id: UUID(),
+                title: "Goal 1",
+                description: "First goal description.",
+                createdBy: Member(username: "Alice"),
+                members: []
+            ),
+            Goal(
+                id: UUID(),
+                title: "Goal 2",
+                description: "Second goal description.",
+                createdBy: Member(username: "Bob"),
+                members: []
+            )
+        ]
     ))
 }

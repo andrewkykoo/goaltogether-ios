@@ -8,7 +8,7 @@ class GroupListViewModel: ObservableObject {
     
     private let dataService: DataService
     // In a real app, these could come from the current user's preferences.
-    private let recommendedInterests: [String] = ["Reading", "Cooking"]
+    private let recommendedInterests: [String] = ["Running", "Cooking"]
     
     init(dataService: DataService = MockDataService()) {
         self.dataService = dataService

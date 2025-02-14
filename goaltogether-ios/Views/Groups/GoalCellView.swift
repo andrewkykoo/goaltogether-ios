@@ -4,18 +4,24 @@ struct GoalCellView: View {
     let goal: Goal
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 4) {
-            Text(goal.title)
-                .font(.headline)
-            Text(goal.description)
-                .font(.subheadline)
-                .foregroundColor(.secondary)
-            Text("started by \(goal.createdBy.username)")
-                .font(.footnote)
-                .foregroundColor(.secondary)
-            
+        HStack {
+            VStack(alignment: .leading, spacing: 4) {
+                Text(goal.title)
+                    .font(.headline)
+                if !goal.description.isEmpty {
+                    Text(goal.description)
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                        .lineLimit(2)
+                }
+                // Optionally display how many members have joined the goal.
+                Text("\(goal.members.count) member\(goal.members.count == 1 ? "" : "s")")
+                    .font(.caption2)
+                    .foregroundColor(.gray)
+            }
+            .padding(.vertical, 8)
+            Spacer()
         }
-        .padding(.vertical, 4)
     }
 }
 
@@ -24,7 +30,7 @@ struct GoalCellView_Previews: PreviewProvider {
         GoalCellView(goal: Goal(
             id: UUID(),
             title: "Sample Goal",
-            description: "Goal description",
+            description: "A brief description of the goal.",
             createdBy: Member(username: "Alice"),
             members: [Member(username: "Alice"), Member(username: "Bob")]
         ))

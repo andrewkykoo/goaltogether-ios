@@ -4,7 +4,7 @@ struct GroupListView: View {
     @EnvironmentObject private var viewModel: GroupListViewModel
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             SwiftUI.Group {
                 if viewModel.allGroups.isEmpty {
                     ProgressView("Loading groups...")
@@ -15,9 +15,10 @@ struct GroupListView: View {
                             GroupDetailView(group: group)
                         } label: {
                             GroupCellView(group: group)
+                                .padding(.vertical, 4)
                         }
                     }
-                    .listStyle(PlainListStyle())
+                    .listStyle(InsetGroupedListStyle())
                 }
             }
             .navigationTitle("Explore")
